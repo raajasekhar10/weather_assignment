@@ -1,0 +1,32 @@
+server:
+  tomcat:
+    accesslog:
+      enabled: false
+    basedir: .
+  port: 8080
+
+client:
+  weatherService:
+    url: https://weather.cit.api.here.com/weather/1.0/report.json
+    appCode: AJKnXv84fjrb0KIHawS0Tg
+    appId: DemoAppId01082013GAL
+
+httpConnection:
+  max: 100
+  perRoute: 30
+  validateInactivity: 3000
+  monitor:
+    enabled: false
+    intervalSec: 30
+  5XX:
+    retry:
+      count: 0
+      interval: 0
+  connect:
+    retry:
+      count: 3
+  timeout:
+    socket: 20000
+    connect: 200
+    ttlSec: 300
+    request: 1000
